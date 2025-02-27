@@ -73,5 +73,11 @@ namespace AccessControlApp
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
             addEmployeeForm.ShowDialog(); // Открываем форму модально
         }
+
+        private void btnImportExport_Click(object sender, EventArgs e)
+        {
+            ImportExportForm importExportForm = new ImportExportForm();
+            importExportForm.ShowDialog();
+        }
     }
 }

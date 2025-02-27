@@ -147,12 +147,12 @@
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Location = new System.Drawing.Point(118, 177);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(8);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "";
             this.txtUsername.SelectedText = "";
-            this.txtUsername.Size = new System.Drawing.Size(384, 59);
+            this.txtUsername.Size = new System.Drawing.Size(378, 59);
             this.txtUsername.TabIndex = 10;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -170,12 +170,12 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(118, 269);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(384, 61);
+            this.txtPassword.Size = new System.Drawing.Size(378, 61);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);

@@ -31,11 +31,12 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSecurity = new System.Windows.Forms.Button();
             this.btnBackupRestore = new System.Windows.Forms.Button();
             this.btnEncryptedBackup = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnOpenAddEmployeeForm = new System.Windows.Forms.Button();
+            this.btnImportExport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,16 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AccessControlApp.Properties.Resources._131507_hacker_administrator_system_sys_hack_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSecurity
             // 
@@ -112,25 +123,31 @@
             this.btnEncryptedBackup.UseVisualStyleBackColor = false;
             this.btnEncryptedBackup.Click += new System.EventHandler(this.btnEncryptedBackup_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AccessControlApp.Properties.Resources._131507_hacker_administrator_system_sys_hack_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnOpenAddEmployeeForm
             // 
-            this.btnOpenAddEmployeeForm.Location = new System.Drawing.Point(121, 291);
+            this.btnOpenAddEmployeeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnOpenAddEmployeeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenAddEmployeeForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOpenAddEmployeeForm.Location = new System.Drawing.Point(62, 275);
             this.btnOpenAddEmployeeForm.Name = "btnOpenAddEmployeeForm";
-            this.btnOpenAddEmployeeForm.Size = new System.Drawing.Size(75, 23);
+            this.btnOpenAddEmployeeForm.Size = new System.Drawing.Size(138, 75);
             this.btnOpenAddEmployeeForm.TabIndex = 40;
-            this.btnOpenAddEmployeeForm.Text = "button1";
-            this.btnOpenAddEmployeeForm.UseVisualStyleBackColor = true;
+            this.btnOpenAddEmployeeForm.Text = "Добавление сотрудника";
+            this.btnOpenAddEmployeeForm.UseVisualStyleBackColor = false;
             this.btnOpenAddEmployeeForm.Click += new System.EventHandler(this.btnOpenAddEmployeeForm_Click);
+            // 
+            // btnImportExport
+            // 
+            this.btnImportExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnImportExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnImportExport.Location = new System.Drawing.Point(320, 275);
+            this.btnImportExport.Name = "btnImportExport";
+            this.btnImportExport.Size = new System.Drawing.Size(157, 75);
+            this.btnImportExport.TabIndex = 41;
+            this.btnImportExport.Text = "Import and Export";
+            this.btnImportExport.UseVisualStyleBackColor = false;
+            this.btnImportExport.Click += new System.EventHandler(this.btnImportExport_Click);
             // 
             // MainForm
             // 
@@ -138,6 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(850, 504);
+            this.Controls.Add(this.btnImportExport);
             this.Controls.Add(this.btnOpenAddEmployeeForm);
             this.Controls.Add(this.btnEncryptedBackup);
             this.Controls.Add(this.btnBackupRestore);
@@ -163,5 +181,6 @@
         private System.Windows.Forms.Button btnBackupRestore;
         private System.Windows.Forms.Button btnEncryptedBackup;
         private System.Windows.Forms.Button btnOpenAddEmployeeForm;
+        private System.Windows.Forms.Button btnImportExport;
     }
 }

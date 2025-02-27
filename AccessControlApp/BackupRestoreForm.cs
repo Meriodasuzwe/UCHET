@@ -41,27 +41,45 @@ namespace AccessControlApp
             if (comboBoxDatabases.Items.Count > 0)
                 comboBoxDatabases.SelectedIndex = 0; // По умолчанию выбираем первую базу
         }
-
+        private bool isBackupMode = true;
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
-            saveFileDialog.Title = "Выберите место для сохранения резервной копии";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (isBackupMode)
             {
-                txtBackupPath.Text = saveFileDialog.FileName;
+                // Выбор пути для резервного копирования
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
+                saveFileDialog.Title = "Выберите место для сохранения резервной копии";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtBackupPath.Text = saveFileDialog.FileName;
+                }
+            }
+            else
+            {
+                // Выбор файла для восстановления
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
+                openFileDialog.Title = "Выберите файл резервной копии";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtRestorePath.Text = openFileDialog.FileName;
+                }
             }
         }
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
+            isBackupMode = true;
             string dbName = comboBoxDatabases.SelectedItem?.ToString();
             string backupPath = txtBackupPath.Text;
 
             if (string.IsNullOrWhiteSpace(dbName) || string.IsNullOrWhiteSpace(backupPath))
             {
-                MessageBox.Show("Выберите базу данных и укажите путь для резервной копии.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Выберите базу данных и укажите путь для резервной копии.",
+                                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -69,59 +87,173 @@ namespace AccessControlApp
 
             if (chkBackupUncommitted.Checked)
             {
-                // Резервное копирование незавершённых транзакций (журнал транзакций)
+                // Бэкап журнала транзакций (незавершённые изменения)
                 query = $"BACKUP LOG [{dbName}] TO DISK = '{backupPath}' WITH NO_TRUNCATE;";
+            }
+            else if (chkBackupDifferential.Checked)
+            {
+                // Дифференциальный бэкап (только изменения с последнего полного)
+                query = $"BACKUP DATABASE [{dbName}] TO DISK = '{backupPath}' WITH DIFFERENTIAL;";
             }
             else
             {
-                // Обычное резервное копирование базы данных
-                string options = chkBackupChanges.Checked ? " WITH COPY_ONLY" : "";
+                // Полный бэкап (по умолчанию)
+                string options = chkBackupChanges.Checked ? " WITH INIT" : "";
                 query = $"BACKUP DATABASE [{dbName}] TO DISK = '{backupPath}'{options};";
             }
 
-            ExecuteSql(query, "Резервное копирование успешно завершено.");
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                ExecuteSql(query, conn, "Резервное копирование успешно завершено.");
+            }
+
         }
+
 
 
         //-----
-        private void ExecuteSql(string query, string successMessage)
+        // Универсальный метод выполнения SQL-команд
+        private void ExecuteSql(string query, SqlConnection conn, string successMessage = null)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
+                }
+
+                if (!string.IsNullOrWhiteSpace(successMessage))
+                {
                     lblStatus.Text = successMessage;
                     MessageBox.Show(successMessage, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка SQL: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка SQL: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            string dbName = comboBoxDatabases.SelectedItem?.ToString();
-            string backupPath = txtBackupPath.Text;
+            isBackupMode = false;
+            string dbName = comboBoxDatabases.Text; // Или SelectedItem.ToString()
+            string backupPath = txtRestorePath.Text;
 
+            // 2. Проверяем, что пользователь ввел данные
             if (string.IsNullOrWhiteSpace(dbName) || string.IsNullOrWhiteSpace(backupPath))
             {
-                MessageBox.Show("Выберите базу данных и укажите путь к файлу резервной копии.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Укажите базу данных и путь к файлу резервной копии!",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string query = $@"
+            // 3. Пытаемся выполнить восстановление
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Формируем единый запрос
+                    string query = $@"
+                USE master;
                 ALTER DATABASE [{dbName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                RESTORE DATABASE [{dbName}] FROM DISK = '{backupPath}' WITH REPLACE;
+                RESTORE DATABASE [{dbName}]
+                FROM DISK = '{backupPath}'
+                WITH REPLACE, RECOVERY;
                 ALTER DATABASE [{dbName}] SET MULTI_USER;
             ";
 
-            ExecuteSql(query, "Восстановление базы данных успешно завершено.");
+                    // Выполняем запрос
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Если все ок
+                MessageBox.Show("Восстановление успешно завершено!",
+                    "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Если произошла ошибка
+                MessageBox.Show("Ошибка при восстановлении: " + ex.Message,
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        // Полное восстановление
+        private void RestoreFullBackup(string dbName, string backupPath)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = $@"
+            USE [master]; 
+            ALTER DATABASE [{dbName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; 
+            RESTORE DATABASE [{dbName}] FROM DISK = '{backupPath}' 
+            WITH REPLACE, RECOVERY;
+            ALTER DATABASE [{dbName}] SET MULTI_USER;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Полное восстановление выполнено успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при восстановлении: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // Дифференциальное восстановление
+        private void RestoreDifferentialBackup(string dbName, string backupPath, SqlConnection conn)
+        {
+            string query = $@"
+    RESTORE DATABASE [{dbName}] FROM DISK = '{backupPath}' WITH RECOVERY;
+    ALTER DATABASE [{dbName}] SET MULTI_USER;
+    ";
+            ExecuteSql(query, conn);
+        }
+
+        // Восстановление журнала транзакций
+        private void RestoreLogBackup(string dbName, string backupPath, SqlConnection conn)
+        {
+            string query = $@"
+    RESTORE LOG [{dbName}] FROM DISK = '{backupPath}' WITH RECOVERY;";
+            ExecuteSql(query, conn);
+        }
+        // Проверка наличия полного бэкапа перед дифференциальным или логовым восстановлением
+        private bool IsFullBackupExists(string dbName, SqlConnection conn)
+        {
+            string query = $"RESTORE HEADERONLY FROM DISK = '{txtBackupPath.Text}'";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader()) // Используем ExecuteReader()
+                {
+                    return reader.HasRows; // Проверяем, есть ли данные
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //RESTORE END
+
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -144,6 +276,45 @@ namespace AccessControlApp
         }
 
         private void chkBackupChanges_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkBackupDifferential_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBrowseLog_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
+            openFileDialog.Title = "Выберите файл дифференциального бэкапа";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtDiffBackupPath.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void btnBrowseDiff_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Transaction Log files (*.trn)|*.trn|All files (*.*)|*.*";
+            openFileDialog.Title = "Выберите файл журнала транзакций";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtLogPath.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void rbFullRestore_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRestorePath_TextChanged(object sender, EventArgs e)
         {
 
         }

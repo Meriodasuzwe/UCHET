@@ -61,7 +61,8 @@ namespace AccessControlApp
             }
 
             // Проверяем, корректен ли возраст
-            if (!int.TryParse(textBoxAge.Text, out int age) || age <= 0)
+           
+            if (!int.TryParse(textBoxAge.Text.Trim(), out int age) || age <= 0)
             {
                 MessageBox.Show("Введите корректный возраст!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -82,7 +83,7 @@ namespace AccessControlApp
 
                 try
                 {
-                    // ✅ Добавлен параметр @Age в SQL-запрос
+                    
                     string query = @"INSERT INTO Employees (FullName, DepartmentCode, Address, Position, Age)
                              VALUES (@FullName, @DepartmentCode, @Address, @Position, @Age);";
 
@@ -92,7 +93,7 @@ namespace AccessControlApp
                         cmd.Parameters.AddWithValue("@DepartmentCode", departmentCode);
                         cmd.Parameters.AddWithValue("@Address", address);
                         cmd.Parameters.AddWithValue("@Position", position);
-                        cmd.Parameters.AddWithValue("@Age", age); // Добавлен возраст
+                        cmd.Parameters.AddWithValue("@Age", age); 
 
                         cmd.ExecuteNonQuery();
                     }
@@ -118,8 +119,22 @@ namespace AccessControlApp
             }
         }
 
+        private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSurname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
         }

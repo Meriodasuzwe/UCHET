@@ -113,9 +113,29 @@ namespace AccessControlApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _299086_info_sign_icon {
+            get {
+                object obj = ResourceManager.GetObject("299086_info_sign_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _299105_lock_icon {
             get {
                 object obj = ResourceManager.GetObject("299105_lock_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _326659_info_icon {
+            get {
+                object obj = ResourceManager.GetObject("326659_info_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,16 @@ namespace AccessControlApp.Properties {
         internal static System.Drawing.Bitmap _9004760_unlock_padlock_access_security_icon {
             get {
                 object obj = ResourceManager.GetObject("9004760_unlock_padlock_access_security_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

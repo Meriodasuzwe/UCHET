@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupRestoreForm));
             this.comboBoxDatabases = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkBackupDifferential = new System.Windows.Forms.CheckBox();
             this.chkBackupUncommitted = new System.Windows.Forms.CheckBox();
             this.chkBackupChanges = new System.Windows.Forms.CheckBox();
             this.txtBackupPath = new System.Windows.Forms.TextBox();
@@ -44,6 +45,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtLogPath = new Guna.UI2.WinForms.Guna2TextBox();
+            this.FullRestore = new System.Windows.Forms.RadioButton();
+            this.rbDiffRestore = new System.Windows.Forms.RadioButton();
+            this.rbLogRestore = new System.Windows.Forms.RadioButton();
+            this.txtDiffBackupPath = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnBrowseDiff = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBrowseLog = new Guna.UI2.WinForms.Guna2Button();
+            this.txtRestorePath = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkBackupDifferential);
             this.groupBox1.Controls.Add(this.chkBackupUncommitted);
             this.groupBox1.Controls.Add(this.chkBackupChanges);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
@@ -69,25 +79,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройка";
             // 
+            // chkBackupDifferential
+            // 
+            this.chkBackupDifferential.AutoSize = true;
+            this.chkBackupDifferential.Location = new System.Drawing.Point(19, 65);
+            this.chkBackupDifferential.Name = "chkBackupDifferential";
+            this.chkBackupDifferential.Size = new System.Drawing.Size(164, 17);
+            this.chkBackupDifferential.TabIndex = 2;
+            this.chkBackupDifferential.Text = "Дифференциальный бэкап";
+            this.chkBackupDifferential.UseVisualStyleBackColor = true;
+            this.chkBackupDifferential.CheckedChanged += new System.EventHandler(this.chkBackupDifferential_CheckedChanged);
+            // 
             // chkBackupUncommitted
             // 
             this.chkBackupUncommitted.AutoSize = true;
-            this.chkBackupUncommitted.Location = new System.Drawing.Point(20, 55);
+            this.chkBackupUncommitted.Location = new System.Drawing.Point(19, 42);
             this.chkBackupUncommitted.Name = "chkBackupUncommitted";
-            this.chkBackupUncommitted.Size = new System.Drawing.Size(296, 17);
+            this.chkBackupUncommitted.Size = new System.Drawing.Size(165, 17);
             this.chkBackupUncommitted.TabIndex = 1;
-            this.chkBackupUncommitted.Text = "Резервное копирование незавершённых транзакций";
+            this.chkBackupUncommitted.Text = "Бэкап журнала транзакций";
             this.chkBackupUncommitted.UseVisualStyleBackColor = true;
             this.chkBackupUncommitted.CheckedChanged += new System.EventHandler(this.chkBackupUncommitted_CheckedChanged);
             // 
             // chkBackupChanges
             // 
             this.chkBackupChanges.AutoSize = true;
-            this.chkBackupChanges.Location = new System.Drawing.Point(20, 32);
+            this.chkBackupChanges.Location = new System.Drawing.Point(19, 19);
             this.chkBackupChanges.Name = "chkBackupChanges";
-            this.chkBackupChanges.Size = new System.Drawing.Size(310, 17);
+            this.chkBackupChanges.Size = new System.Drawing.Size(99, 17);
             this.chkBackupChanges.TabIndex = 0;
-            this.chkBackupChanges.Text = "Резервное копирование изменений во время процесса";
+            this.chkBackupChanges.Text = "Полный бэкап";
             this.chkBackupChanges.UseVisualStyleBackColor = true;
             this.chkBackupChanges.CheckedChanged += new System.EventHandler(this.chkBackupChanges_CheckedChanged);
             // 
@@ -103,7 +124,7 @@
             this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBrowse.Location = new System.Drawing.Point(518, 189);
+            this.btnBrowse.Location = new System.Drawing.Point(404, 125);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(103, 61);
             this.btnBrowse.TabIndex = 4;
@@ -116,7 +137,7 @@
             this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBackup.Location = new System.Drawing.Point(443, 296);
+            this.btnBackup.Location = new System.Drawing.Point(709, 125);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(103, 61);
             this.btnBackup.TabIndex = 5;
@@ -129,7 +150,7 @@
             this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestore.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRestore.Location = new System.Drawing.Point(599, 296);
+            this.btnRestore.Location = new System.Drawing.Point(570, 125);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(103, 61);
             this.btnRestore.TabIndex = 6;
@@ -141,7 +162,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblStatus.Location = new System.Drawing.Point(64, 392);
+            this.lblStatus.Location = new System.Drawing.Point(62, 453);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(44, 13);
             this.lblStatus.TabIndex = 7;
@@ -204,19 +225,137 @@
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(781, 0);
+            this.label5.Location = new System.Drawing.Point(886, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 39;
             this.label5.Text = "X";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // txtLogPath
+            // 
+            this.txtLogPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLogPath.DefaultText = "";
+            this.txtLogPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLogPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLogPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLogPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLogPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLogPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtLogPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLogPath.Location = new System.Drawing.Point(635, 450);
+            this.txtLogPath.Name = "txtLogPath";
+            this.txtLogPath.PasswordChar = '\0';
+            this.txtLogPath.PlaceholderText = "";
+            this.txtLogPath.SelectedText = "";
+            this.txtLogPath.Size = new System.Drawing.Size(200, 16);
+            this.txtLogPath.TabIndex = 15;
+            // 
+            // FullRestore
+            // 
+            this.FullRestore.AutoSize = true;
+            this.FullRestore.Location = new System.Drawing.Point(491, 331);
+            this.FullRestore.Name = "FullRestore";
+            this.FullRestore.Size = new System.Drawing.Size(78, 17);
+            this.FullRestore.TabIndex = 16;
+            this.FullRestore.TabStop = true;
+            this.FullRestore.Text = "FullRestore";
+            this.FullRestore.UseVisualStyleBackColor = true;
+            this.FullRestore.CheckedChanged += new System.EventHandler(this.rbFullRestore_CheckedChanged);
+            // 
+            // rbDiffRestore
+            // 
+            this.rbDiffRestore.AutoSize = true;
+            this.rbDiffRestore.Location = new System.Drawing.Point(491, 379);
+            this.rbDiffRestore.Name = "rbDiffRestore";
+            this.rbDiffRestore.Size = new System.Drawing.Size(87, 17);
+            this.rbDiffRestore.TabIndex = 17;
+            this.rbDiffRestore.TabStop = true;
+            this.rbDiffRestore.Text = "rbDiffRestore";
+            this.rbDiffRestore.UseVisualStyleBackColor = true;
+            // 
+            // rbLogRestore
+            // 
+            this.rbLogRestore.AutoSize = true;
+            this.rbLogRestore.Location = new System.Drawing.Point(491, 449);
+            this.rbLogRestore.Name = "rbLogRestore";
+            this.rbLogRestore.Size = new System.Drawing.Size(89, 17);
+            this.rbLogRestore.TabIndex = 18;
+            this.rbLogRestore.TabStop = true;
+            this.rbLogRestore.Text = "rbLogRestore";
+            this.rbLogRestore.UseVisualStyleBackColor = true;
+            // 
+            // txtDiffBackupPath
+            // 
+            this.txtDiffBackupPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiffBackupPath.DefaultText = "";
+            this.txtDiffBackupPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiffBackupPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiffBackupPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiffBackupPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiffBackupPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiffBackupPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiffBackupPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiffBackupPath.Location = new System.Drawing.Point(635, 379);
+            this.txtDiffBackupPath.Name = "txtDiffBackupPath";
+            this.txtDiffBackupPath.PasswordChar = '\0';
+            this.txtDiffBackupPath.PlaceholderText = "";
+            this.txtDiffBackupPath.SelectedText = "";
+            this.txtDiffBackupPath.Size = new System.Drawing.Size(200, 13);
+            this.txtDiffBackupPath.TabIndex = 19;
+            // 
+            // btnBrowseDiff
+            // 
+            this.btnBrowseDiff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowseDiff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowseDiff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBrowseDiff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBrowseDiff.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBrowseDiff.ForeColor = System.Drawing.Color.White;
+            this.btnBrowseDiff.Location = new System.Drawing.Point(635, 398);
+            this.btnBrowseDiff.Name = "btnBrowseDiff";
+            this.btnBrowseDiff.Size = new System.Drawing.Size(200, 23);
+            this.btnBrowseDiff.TabIndex = 20;
+            this.btnBrowseDiff.Text = "дифф востановление путь";
+            this.btnBrowseDiff.Click += new System.EventHandler(this.btnBrowseDiff_Click);
+            // 
+            // btnBrowseLog
+            // 
+            this.btnBrowseLog.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowseLog.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowseLog.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBrowseLog.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBrowseLog.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBrowseLog.ForeColor = System.Drawing.Color.White;
+            this.btnBrowseLog.Location = new System.Drawing.Point(635, 472);
+            this.btnBrowseLog.Name = "btnBrowseLog";
+            this.btnBrowseLog.Size = new System.Drawing.Size(200, 21);
+            this.btnBrowseLog.TabIndex = 21;
+            this.btnBrowseLog.Text = "Поиск журнала транзакций";
+            this.btnBrowseLog.Click += new System.EventHandler(this.btnBrowseLog_Click);
+            // 
+            // txtRestorePath
+            // 
+            this.txtRestorePath.Location = new System.Drawing.Point(491, 212);
+            this.txtRestorePath.Name = "txtRestorePath";
+            this.txtRestorePath.Size = new System.Drawing.Size(321, 20);
+            this.txtRestorePath.TabIndex = 22;
+            this.txtRestorePath.TextChanged += new System.EventHandler(this.txtRestorePath_TextChanged);
+            // 
             // BackupRestoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(905, 505);
+            this.Controls.Add(this.txtRestorePath);
+            this.Controls.Add(this.btnBrowseLog);
+            this.Controls.Add(this.btnBrowseDiff);
+            this.Controls.Add(this.txtDiffBackupPath);
+            this.Controls.Add(this.rbLogRestore);
+            this.Controls.Add(this.rbDiffRestore);
+            this.Controls.Add(this.FullRestore);
+            this.Controls.Add(this.txtLogPath);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblRoad);
             this.Controls.Add(this.lblchooseDB);
@@ -258,5 +397,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkBackupDifferential;
+        private Guna.UI2.WinForms.Guna2TextBox txtLogPath;
+        private System.Windows.Forms.RadioButton FullRestore;
+        private System.Windows.Forms.RadioButton rbDiffRestore;
+        private System.Windows.Forms.RadioButton rbLogRestore;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiffBackupPath;
+        private Guna.UI2.WinForms.Guna2Button btnBrowseDiff;
+        private Guna.UI2.WinForms.Guna2Button btnBrowseLog;
+        private System.Windows.Forms.TextBox txtRestorePath;
     }
 }
