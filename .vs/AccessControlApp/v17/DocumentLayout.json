@@ -3,8 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\AccessControlApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|c:\\users\\user\\source\\repos\\accesscontrolapp\\accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|c:\\users\\user\\source\\repos\\accesscontrolapp\\accesscontrolapp\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\securityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\securityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\hrmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\hrmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\backuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\backuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\encryptedbackuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\encryptedbackuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\EPPlus.7.6.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\encryptedbackuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\encryptedbackuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,60 +75,16 @@
       "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\encryptedbackuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\encryptedbackuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\encryptedbackuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\importexportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:AccessControlApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\securityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\securityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\EPPlus.7.6.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\hrmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\hrmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\accesscontrolapp\\encryptedbackuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|solutionrelative:accesscontrolapp\\encryptedbackuprestoreform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F04A426-9CED-4806-8CAA-F68FB7B31B44}|AccessControlApp\\AccessControlApp.csproj|C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -119,168 +131,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "BackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\BackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\BackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:37:49.962Z",
+              "WhenOpened": "2025-03-06T11:10:31.257Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "readme.txt",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt",
-              "RelativeDocumentMoniker": "packages\\EPPlus.7.6.0\\readme.txt",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt",
-              "RelativeToolTip": "packages\\EPPlus.7.6.0\\readme.txt",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-02-27T12:57:01.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "AccessControlApp\\Properties\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T10:53:26.118Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
-              "RelativeToolTip": "AccessControlApp\\MainForm.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:42:54.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\AddEmployeeForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T16:01:06.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddEmployeeForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\AddEmployeeForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
-              "RelativeToolTip": "AccessControlApp\\AddEmployeeForm.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAcwBIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T16:11:13.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T15:34:17.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EncryptedBackupRestoreForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "RelativeToolTip": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAjwEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T16:36:27.434Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\DatabaseHelper.cs",
-              "RelativeToolTip": "AccessControlApp\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:39:17.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:42:10.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ImportExportForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\ImportExportForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
-              "RelativeToolTip": "AccessControlApp\\ImportExportForm.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T12:57:27.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\ImportExportForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T12:49:28.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Program.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Program.cs",
-              "RelativeToolTip": "AccessControlApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T10:49:17.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "AccessControlApp\\SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:02:09.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "EmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs",
               "RelativeDocumentMoniker": "AccessControlApp\\EmployeeForm.cs",
@@ -291,19 +153,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
-              "RelativeToolTip": "AccessControlApp\\LoginForm.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAIwGoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\ImportExportForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\ImportExportForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:41:56.105Z"
+              "WhenOpened": "2025-02-27T12:49:28.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
               "Title": "HRManagerForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.cs",
               "RelativeDocumentMoniker": "AccessControlApp\\HRManagerForm.cs",
@@ -314,88 +175,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 4,
+              "Title": "LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:37:49.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:42:10.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BackupRestoreForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\BackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.cs",
+              "RelativeToolTip": "AccessControlApp\\BackupRestoreForm.cs",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAkwAABAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T10:22:48.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt",
+              "RelativeDocumentMoniker": "packages\\EPPlus.7.6.0\\readme.txt",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\packages\\EPPlus.7.6.0\\readme.txt",
+              "RelativeToolTip": "packages\\EPPlus.7.6.0\\readme.txt",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-27T12:57:01.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\SecurityForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T14:02:09.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BackupRestoreForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.Designer.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\BackupRestoreForm.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\BackupRestoreForm.Designer.cs",
+              "RelativeToolTip": "AccessControlApp\\BackupRestoreForm.Designer.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAEwGcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T10:32:13.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddEmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\AddEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
+              "RelativeToolTip": "AccessControlApp\\AddEmployeeForm.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T16:11:13.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\AddEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\AddEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T16:01:06.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.cs",
+              "RelativeToolTip": "AccessControlApp\\LoginForm.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAtwFgAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:41:56.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "EncryptedBackupRestoreForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.Designer.cs",
               "RelativeDocumentMoniker": "AccessControlApp\\EncryptedBackupRestoreForm.Designer.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.Designer.cs",
               "RelativeToolTip": "AccessControlApp\\EncryptedBackupRestoreForm.Designer.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAewOIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T13:18:01.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EmployeeForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\EmployeeForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs",
-              "RelativeToolTip": "AccessControlApp\\EmployeeForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:10:45.522Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.Designer.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.Designer.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.Designer.cs",
-              "RelativeToolTip": "AccessControlApp\\MainForm.Designer.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAnwHoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:50:25.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "SecurityForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
-              "RelativeToolTip": "AccessControlApp\\SecurityForm.cs",
-              "ViewState": "AgIAAL8AAAAAAAAAAAAIwM8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:12:01.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SecurityForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.Designer.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.Designer.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.Designer.cs",
-              "RelativeToolTip": "AccessControlApp\\SecurityForm.Designer.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAnwFkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:16:12.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.Designer.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.Designer.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.Designer.cs",
-              "RelativeToolTip": "AccessControlApp\\LoginForm.Designer.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAjwJYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:44:03.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "HRManagerForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.cs",
-              "RelativeDocumentMoniker": "AccessControlApp\\HRManagerForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.cs",
-              "RelativeToolTip": "AccessControlApp\\HRManagerForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T15:11:42.302Z"
             },
             {
               "$type": "Bookmark",
@@ -407,7 +299,162 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "AccessControlApp\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T10:53:26.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.cs",
+              "RelativeToolTip": "AccessControlApp\\MainForm.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:42:54.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "AccessControlApp\\EncryptedBackupRestoreForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:34:17.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EncryptedBackupRestoreForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "RelativeToolTip": "AccessControlApp\\EncryptedBackupRestoreForm.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAjwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T16:36:27.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\DatabaseHelper.cs",
+              "RelativeToolTip": "AccessControlApp\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:39:17.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ImportExportForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\ImportExportForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\ImportExportForm.cs",
+              "RelativeToolTip": "AccessControlApp\\ImportExportForm.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T12:57:27.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Program.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\Program.cs",
+              "RelativeToolTip": "AccessControlApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T10:49:17.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\EmployeeForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.cs",
+              "RelativeToolTip": "AccessControlApp\\EmployeeForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T16:10:45.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\MainForm.Designer.cs",
+              "RelativeToolTip": "AccessControlApp\\MainForm.Designer.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAnwHoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:50:25.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SecurityForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.cs",
+              "RelativeToolTip": "AccessControlApp\\SecurityForm.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAIwM8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T14:12:01.923Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "SecurityForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.Designer.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\SecurityForm.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\SecurityForm.Designer.cs",
+              "RelativeToolTip": "AccessControlApp\\SecurityForm.Designer.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAnwFkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T14:16:12.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\LoginForm.Designer.cs",
+              "RelativeToolTip": "AccessControlApp\\LoginForm.Designer.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAjwJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:44:03.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HRManagerForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.cs",
+              "RelativeDocumentMoniker": "AccessControlApp\\HRManagerForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.cs",
+              "RelativeToolTip": "AccessControlApp\\HRManagerForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T15:11:42.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "HRManagerForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\HRManagerForm.Designer.cs",
               "RelativeDocumentMoniker": "AccessControlApp\\HRManagerForm.Designer.cs",
@@ -419,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "EmployeeForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AccessControlApp\\AccessControlApp\\EmployeeForm.Designer.cs",
               "RelativeDocumentMoniker": "AccessControlApp\\EmployeeForm.Designer.cs",

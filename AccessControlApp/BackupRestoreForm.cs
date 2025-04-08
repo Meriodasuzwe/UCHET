@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,314 +10,283 @@ namespace AccessControlApp
     public partial class BackupRestoreForm : Form
     {
         private string connectionString = "Data Source=WIN-T5MH0DHUEL9;Initial Catalog=master;Integrated Security=True";
-
+        private SqlConnection con;
         public BackupRestoreForm()
         {
             InitializeComponent();
-            LoadDatabases();
+
+            con = new SqlConnection("Data Source=WIN-T5MH0DHUEL9;Initial Catalog=master;Integrated Security=True;");
         }
 
-        // Загрузка баз данных с сервера
-        private void LoadDatabases()
+        private void btnFullBackup_Click(object sender, EventArgs e)
         {
-            comboBoxDatabases.Items.Clear();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            SqlCommand cmd = new SqlCommand("BACKUP DATABASE UCHET TO DISK = N'C:\\Student\\Backups\\"
+                + textBoxFull.Text + ".bak' WITH INIT;", con);
+            if (con.State == ConnectionState.Closed)
             {
-                try
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT name FROM sys.databases WHERE database_id > 4", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        comboBoxDatabases.Items.Add(reader["name"].ToString());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка при загрузке баз данных: " + ex.Message);
-                }
+                con.Open();
             }
-
-            if (comboBoxDatabases.Items.Count > 0)
-                comboBoxDatabases.SelectedIndex = 0; // По умолчанию выбираем первую базу
-        }
-        private bool isBackupMode = true;
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            if (isBackupMode)
-            {
-                // Выбор пути для резервного копирования
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
-                saveFileDialog.Title = "Выберите место для сохранения резервной копии";
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    txtBackupPath.Text = saveFileDialog.FileName;
-                }
-            }
-            else
-            {
-                // Выбор файла для восстановления
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
-                openFileDialog.Title = "Выберите файл резервной копии";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    txtRestorePath.Text = openFileDialog.FileName;
-                }
-            }
-        }
-
-        private void btnBackup_Click(object sender, EventArgs e)
-        {
-            isBackupMode = true;
-            string dbName = comboBoxDatabases.SelectedItem?.ToString();
-            string backupPath = txtBackupPath.Text;
-
-            if (string.IsNullOrWhiteSpace(dbName) || string.IsNullOrWhiteSpace(backupPath))
-            {
-                MessageBox.Show("Выберите базу данных и укажите путь для резервной копии.",
-                                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = "";
-
-            if (chkBackupUncommitted.Checked)
-            {
-                // Бэкап журнала транзакций (незавершённые изменения)
-                query = $"BACKUP LOG [{dbName}] TO DISK = '{backupPath}' WITH NO_TRUNCATE;";
-            }
-            else if (chkBackupDifferential.Checked)
-            {
-                // Дифференциальный бэкап (только изменения с последнего полного)
-                query = $"BACKUP DATABASE [{dbName}] TO DISK = '{backupPath}' WITH DIFFERENTIAL;";
-            }
-            else
-            {
-                // Полный бэкап (по умолчанию)
-                string options = chkBackupChanges.Checked ? " WITH INIT" : "";
-                query = $"BACKUP DATABASE [{dbName}] TO DISK = '{backupPath}'{options};";
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                ExecuteSql(query, conn, "Резервное копирование успешно завершено.");
-            }
-
-        }
-
-
-
-        //-----
-        // Универсальный метод выполнения SQL-команд
-        private void ExecuteSql(string query, SqlConnection conn, string successMessage = null)
-        {
             try
             {
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-
-                if (!string.IsNullOrWhiteSpace(successMessage))
-                {
-                    lblStatus.Text = successMessage;
-                    MessageBox.Show(successMessage, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Полная резервная копия создана!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка SQL: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
-
-        private void btnRestore_Click(object sender, EventArgs e)
+        private void btnDiffBackup_Click(object sender, EventArgs e)
         {
-            isBackupMode = false;
-            string dbName = comboBoxDatabases.Text; // Или SelectedItem.ToString()
-            string backupPath = txtRestorePath.Text;
-
-            // 2. Проверяем, что пользователь ввел данные
-            if (string.IsNullOrWhiteSpace(dbName) || string.IsNullOrWhiteSpace(backupPath))
+            SqlCommand cmd = new SqlCommand("BACKUP DATABASE UCHET TO DISK = N'C:\\Student\\Backups\\"
+                + textBoxDiff.Text + ".bak' WITH DIFFERENTIAL;", con);
+            if (con.State == ConnectionState.Closed)
             {
-                MessageBox.Show("Укажите базу данных и путь к файлу резервной копии!",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                con.Open();
             }
-
-            // 3. Пытаемся выполнить восстановление
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    // Формируем единый запрос
-                    string query = $@"
-                USE master;
-                ALTER DATABASE [{dbName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                RESTORE DATABASE [{dbName}]
-                FROM DISK = '{backupPath}'
-                WITH REPLACE, RECOVERY;
-                ALTER DATABASE [{dbName}] SET MULTI_USER;
-            ";
-
-                    // Выполняем запрос
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-
-                // Если все ок
-                MessageBox.Show("Восстановление успешно завершено!",
-                    "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Дифференциальная резервная копия создана!");
             }
             catch (Exception ex)
             {
-                // Если произошла ошибка
-                MessageBox.Show("Ошибка при восстановлении: " + ex.Message,
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
-        // Полное восстановление
-        private void RestoreFullBackup(string dbName, string backupPath)
+        private void btnLogBackup_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("BACKUP LOG UCHET TO DISK = N'C:\\Student\\Backups\\"
+                + textBoxLog.Text + ".bak';", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = $@"
-            USE [master]; 
-            ALTER DATABASE [{dbName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; 
-            RESTORE DATABASE [{dbName}] FROM DISK = '{backupPath}' 
-            WITH REPLACE, RECOVERY;
-            ALTER DATABASE [{dbName}] SET MULTI_USER;";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-
-                MessageBox.Show("Полное восстановление выполнено успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Резервная копия журнала транзакций создана!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при восстановлении: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
-
-        // Дифференциальное восстановление
-        private void RestoreDifferentialBackup(string dbName, string backupPath, SqlConnection conn)
+        private void btnFullRes_Click(object sender, EventArgs e)
         {
-            string query = $@"
-    RESTORE DATABASE [{dbName}] FROM DISK = '{backupPath}' WITH RECOVERY;
-    ALTER DATABASE [{dbName}] SET MULTI_USER;
-    ";
-            ExecuteSql(query, conn);
-        }
-
-        // Восстановление журнала транзакций
-        private void RestoreLogBackup(string dbName, string backupPath, SqlConnection conn)
-        {
-            string query = $@"
-    RESTORE LOG [{dbName}] FROM DISK = '{backupPath}' WITH RECOVERY;";
-            ExecuteSql(query, conn);
-        }
-        // Проверка наличия полного бэкапа перед дифференциальным или логовым восстановлением
-        private bool IsFullBackupExists(string dbName, SqlConnection conn)
-        {
-            string query = $"RESTORE HEADERONLY FROM DISK = '{txtBackupPath.Text}'";
+            SqlCommand cmd = new SqlCommand("USE [master] ALTER DATABASE [UCHET] SET SINGLE_USER WITH ROLLBACK IMMEDIATE ; RESTORE DATABASE [UCHET] FROM DISK = 'C:\\Student\\Backups\\"
+                + textBoxFullRes.Text + ".bak' WITH REPLACE,RECOVERY;" +
+                "ALTER DATABASE[UCHET] SET MULTI_USER;", con);
             try
             {
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                using (SqlDataReader reader = cmd.ExecuteReader()) // Используем ExecuteReader()
+                if (con.State == ConnectionState.Closed)
                 {
-                    return reader.HasRows; // Проверяем, есть ли данные
+                    con.Open();
                 }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Восстановление из полного бэкапа успешно завершен!");
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
+            con.Close();
         }
 
-        //RESTORE END
-
-
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void lblRoad_Click(object sender, EventArgs e)
+        private void btnDiffRes_Click(object sender, EventArgs e)
         {
 
-        }
+            SqlCommand cmd = new SqlCommand("USE [master] " +
+             "ALTER DATABASE [UCHET] SET SINGLE_USER WITH ROLLBACK IMMEDIATE RESTORE DATABASE [UCHET] FROM DISK = N'C:\\Student\\Backups\\" + textBoxFullRes.Text + ".bak' WITH FILE = 1, NORECOVERY, NOUNLOAD, REPLACE, STATS = 5; " +
+             "RESTORE DATABASE [UCHET] FROM DISK = N'C:\\Student\\Backups\\" + textBoxDiffRes.Text + ".bak' WITH FILE = 1, REPLACE, RECOVERY, NOUNLOAD, STATS = 5; " +
+             "ALTER DATABASE [UCHET] SET MULTI_USER;", con);
 
-        private void BackupRestoreForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBackupUncommitted_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBackupChanges_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBackupDifferential_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBrowseLog_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Backup files (*.bak)|*.bak|All files (*.*)|*.*";
-            openFileDialog.Title = "Выберите файл дифференциального бэкапа";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                txtDiffBackupPath.Text = openFileDialog.FileName;
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Восстановление из дифференциального бэкапа успешно завершен!");
             }
-        }
-
-        private void btnBrowseDiff_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Transaction Log files (*.trn)|*.trn|All files (*.*)|*.*";
-            openFileDialog.Title = "Выберите файл журнала транзакций";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            catch (Exception ex)
             {
-                txtLogPath.Text = openFileDialog.FileName;
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+            con.Close();
+        }
+
+        private void btnLogRes_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("USE [master] ALTER DATABASE [UCHET] SET SINGLE_USER WITH ROLLBACK IMMEDIATE  RESTORE DATABASE [UCHET] FROM  DISK =  N'C:\\Student\\Backups\\"
+                + textBoxFullRes.Text + ".bak' WITH  FILE = 1,  NORECOVERY,  NOUNLOAD,  REPLACE,  STATS = 5 RESTORE DATABASE [UCHET] FROM  DISK = N'C:\\Student\\Backups\\"
+                + textBoxDiffRes.Text + ".bak' WITH  FILE = 1, NORECOVERY, NOUNLOAD, STATS = 5 RESTORE LOG [UCHET] FROM  DISK = N'C:\\Student\\Backups\\"
+                + textBoxLogRes.Text + ".bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 5 ALTER DATABASE [UCHET] SET MULTI_USER", con);
+
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Восстановление из журнала транзакций успешно завершен!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+            con.Close();
+        }
+
+        private void btnCrKey_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("use master create master key encryption by password = '" + textBoxPassEnc.Text + "'", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Выполнение команд успешно завершено.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
-        private void rbFullRestore_CheckedChanged(object sender, EventArgs e)
+        private void btnDelKey_Click(object sender, EventArgs e)
         {
-
+            SqlCommand cmd = new SqlCommand("DROP MASTER KEY ", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Выполнение команд успешно завершено.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
         }
 
-        private void txtRestorePath_TextChanged(object sender, EventArgs e)
+        private void btnCrCer_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("use master create certificate " + textBoxCert.Text + " with subject = 'mybackup'", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Выполнение команд успешно завершено.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
 
+        private void btnDelCer_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("DROP CERTIFICATE " + textBoxCert.Text + "", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Выполнение команд успешно завершено.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
+
+        private void btnCrKeyCer_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("use master backup certificate " + textBoxCert.Text + " to file = 'C:\\KeyCer\\" + textBoxCert.Text + ".cer' with private key ( file = 'C:\\KeyCer\\" + textBoxPassEnc.Text + ".pvk', encryption by password = '" + textBoxKeyCer.Text + "' ) ", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Резервная копирование мастер-ключа и сертификата создана.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
+
+        private void btnNewCert_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("use master create certificate " + textBoxNewCert.Text + " from file = 'C:\\KeyCer\\" + textBoxCert.Text + ".cer' with private key (file = 'C:\\KeyCer\\" + textBoxKeyCer.Text + ".pvk', decryption by password = '" + textBoxPassEnc.Text + "')", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Сертификат успешно восстановлен");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
+
+        private void btnEncDB_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("BACKUP DATABASE [UCHET] TO DISK = N'C:\\database\\" + textBoxName_encDB.Text + ".bak' WITH COMPRESSION, ENCRYPTION ( ALGORITHM = AES_256, SERVER CERTIFICATE = " + textBoxCert.Text + "), STATS = 10 ", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Резервную копирование БД с использованием алгоритма шифрования AEC_256 создана.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
+
+        private void btnResEncDB_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("USE [master]\r\nALTER DATABASE [UCHET] SET SINGLE_USER WITH ROLLBACK IMMEDIATE RESTORE DATABASE [UCHET] FROM  DISK = N'C:\\database\\" + textBoxName_encDB.Text + ".bak' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 5 ALTER DATABASE [UCHET] SET MULTI_USER;", con);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("База данных успешно восстановлена");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
         }
     }
 }
