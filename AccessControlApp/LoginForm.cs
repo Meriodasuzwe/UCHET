@@ -6,16 +6,14 @@ namespace AccessControlApp
 {
     public partial class LoginForm : Form
     {
-        // Шаблон строки подключения для SQL-аутентификации
-        private string connectionStringTemplate = "Data Source=WIN-T5MH0DHUEL9;Initial Catalog=UCHET;User ID={0};Password={1}";
+        // Строка подключения с использованием параметров безопасности
+        private string _connectionStringTemplate = "Data Source=WIN-T5MH0DHUEL9;Initial Catalog=UCHET;User ID={0};Password={1};";
 
         public LoginForm()
         {
             InitializeComponent();
-            
         }
 
-        // Обработчик нажатия на кнопку "Войти"
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -23,82 +21,81 @@ namespace AccessControlApp
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Пожалуйста, введите логин и пароль.");
+                MessageBox.Show("Введите логин и пароль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Формируем строку подключения
-            string connectionString = string.Format(connectionStringTemplate, username, password);
+            string connectionString = string.Format(_connectionStringTemplate, username, password);
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open(); // Пытаемся подключиться
+                    conn.Open();
 
-                    // Определяем роль пользователя
-                    string query = @"
+                    // Проверка ролей в базе данных
+                    string roleQuery = @"
                         SELECT 
-                            ISNULL(IS_SRVROLEMEMBER('sysadmin'), 0) AS IsAdmin,
+                            ISNULL(IS_MEMBER('db_owner'), 0) AS IsAdmin,
                             ISNULL(IS_MEMBER('HRManager'), 0) AS IsHRManager,
                             ISNULL(IS_MEMBER('Employee'), 0) AS IsEmployee";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlCommand cmd = new SqlCommand(roleQuery, conn))
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
+                            int isAdmin = reader.GetInt32(0);
+                            int isHRManager = reader.GetInt32(1);
+                            int isEmployee = reader.GetInt32(2);
+
                             Form nextForm = null;
 
-                            if (reader.GetInt32(0) == 1) // Администратор
+                            if (isAdmin == 1)
                             {
-                                MessageBox.Show($"Добро пожаловать, {username} (Администратор)!");
-                                nextForm = new MainForm(1, username);
+                                nextForm = new MainForm(roleId: 1, fullName: username);
                             }
-                            else if (reader.GetInt32(1) == 1) // HR-менеджер
+                            else if (isHRManager == 1)
                             {
-                                MessageBox.Show($"Добро пожаловать, {username} (HR Менеджер)!");
-                                nextForm = new HRManagerForm(3, username);
+                                nextForm = new MainForm(roleId: 2, fullName: username);
                             }
-                            else if (reader.GetInt32(2) == 1) // Сотрудник
+                            else if (isEmployee == 1)
                             {
-                                MessageBox.Show($"Добро пожаловать, {username} (Сотрудник)!");
-                                nextForm = new EmployeeForm(2, username);
+                                nextForm = new EmployeeForm(roleId: 3, fullName: username);
                             }
                             else
                             {
-                                MessageBox.Show("У вас нет доступа к системе.");
+                                MessageBox.Show("Доступ запрещён.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
 
                             if (nextForm != null)
                             {
-                                nextForm.Show();
                                 this.Hide();
+                                nextForm.ShowDialog();
+                                this.Close();
                             }
                         }
                     }
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show($"Ошибка подключения: {ex.Message}");
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Ошибка аутентификации: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Неизвестная ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void LoginForm_Load(object sender, EventArgs e) { }
-
+        // Закрытие формы
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }

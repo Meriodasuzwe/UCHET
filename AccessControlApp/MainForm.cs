@@ -21,7 +21,7 @@ namespace AccessControlApp
             this.roleId = roleId;
             this.fullName = fullName;
 
-            if (roleId == 1) // Только администратор
+            if (roleId == 1 || roleId == 2) // Только администратор
             {
                 SetupForm();
             }
@@ -34,8 +34,27 @@ namespace AccessControlApp
 
         private void SetupForm()
         {
-           
-            lblRole.Text = "Роль: Администратор";
+
+            if (roleId == 1) // Администратор
+            {
+                lblRole.Text = "Роль: Администратор";
+                btnSecurity.Visible = true;
+                btnBackupRestore.Visible = true;
+                
+                btnImportExport.Visible = true;
+                btnOpenAddEmployeeForm.Visible = true;
+                btnInventoryCard.Visible = true;
+            }
+            else if (roleId == 2) // HRManager
+            {
+                lblRole.Text = "Роль: Менеджер отдела кадров";
+                btnSecurity.Visible = false;
+                btnBackupRestore.Visible = false;
+                
+                btnImportExport.Visible = true;
+                btnOpenAddEmployeeForm.Visible = true;
+                btnInventoryCard.Visible = true;
+            }
         }
 
         // Метод для создания логина и пользователя
@@ -57,11 +76,7 @@ namespace AccessControlApp
             backupForm.ShowDialog();
         }
 
-        private void btnEncryptedBackup_Click(object sender, EventArgs e)
-        {
-            EncryptedBackupRestoreForm encryptedBackupForm = new EncryptedBackupRestoreForm();
-            encryptedBackupForm.Show();
-        }
+        
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -78,6 +93,18 @@ namespace AccessControlApp
         {
             ImportExportForm importExportForm = new ImportExportForm();
             importExportForm.ShowDialog();
+        }
+
+        private void btnInventoryCard_Click(object sender, EventArgs e)
+        {
+            EquipmentViewerForm equipmentViewerForm = new EquipmentViewerForm();
+            equipmentViewerForm.ShowDialog();
+        }
+
+        private void btnAudit_Click(object sender, EventArgs e)
+        {
+            auditt auditt = new auditt();
+            auditt.ShowDialog();
         }
     }
 }

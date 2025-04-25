@@ -34,9 +34,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSecurity = new System.Windows.Forms.Button();
             this.btnBackupRestore = new System.Windows.Forms.Button();
-            this.btnEncryptedBackup = new System.Windows.Forms.Button();
             this.btnOpenAddEmployeeForm = new System.Windows.Forms.Button();
             this.btnImportExport = new System.Windows.Forms.Button();
+            this.btnInventoryCard = new System.Windows.Forms.Button();
+            this.btnAudit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,12 +46,12 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
-            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblRole.Location = new System.Drawing.Point(155, 34);
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblRole.Location = new System.Drawing.Point(153, 22);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(229, 37);
+            this.lblRole.Size = new System.Drawing.Size(284, 50);
             this.lblRole.TabIndex = 1;
-            this.lblRole.Text = "Администратор";
+            this.lblRole.Text = "Главное меню";
             // 
             // panel1
             // 
@@ -60,7 +61,7 @@
             this.panel1.Controls.Add(this.lblRole);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1332, 109);
+            this.panel1.Size = new System.Drawing.Size(854, 109);
             this.panel1.TabIndex = 9;
             // 
             // label3
@@ -110,19 +111,6 @@
             this.btnBackupRestore.UseVisualStyleBackColor = false;
             this.btnBackupRestore.Click += new System.EventHandler(this.btnBackupRestore_Click);
             // 
-            // btnEncryptedBackup
-            // 
-            this.btnEncryptedBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnEncryptedBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncryptedBackup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEncryptedBackup.Location = new System.Drawing.Point(572, 151);
-            this.btnEncryptedBackup.Name = "btnEncryptedBackup";
-            this.btnEncryptedBackup.Size = new System.Drawing.Size(157, 75);
-            this.btnEncryptedBackup.TabIndex = 39;
-            this.btnEncryptedBackup.Text = "Шифрование с использованием сертификата";
-            this.btnEncryptedBackup.UseVisualStyleBackColor = false;
-            this.btnEncryptedBackup.Click += new System.EventHandler(this.btnEncryptedBackup_Click);
-            // 
             // btnOpenAddEmployeeForm
             // 
             this.btnOpenAddEmployeeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
@@ -145,9 +133,35 @@
             this.btnImportExport.Name = "btnImportExport";
             this.btnImportExport.Size = new System.Drawing.Size(157, 75);
             this.btnImportExport.TabIndex = 41;
-            this.btnImportExport.Text = "Import and Export";
+            this.btnImportExport.Text = "Импорт и экспорт документов";
             this.btnImportExport.UseVisualStyleBackColor = false;
             this.btnImportExport.Click += new System.EventHandler(this.btnImportExport_Click);
+            // 
+            // btnInventoryCard
+            // 
+            this.btnInventoryCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnInventoryCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventoryCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnInventoryCard.Location = new System.Drawing.Point(572, 275);
+            this.btnInventoryCard.Name = "btnInventoryCard";
+            this.btnInventoryCard.Size = new System.Drawing.Size(157, 75);
+            this.btnInventoryCard.TabIndex = 42;
+            this.btnInventoryCard.Text = "Инвентарная карточка";
+            this.btnInventoryCard.UseVisualStyleBackColor = false;
+            this.btnInventoryCard.Click += new System.EventHandler(this.btnInventoryCard_Click);
+            // 
+            // btnAudit
+            // 
+            this.btnAudit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnAudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAudit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAudit.Location = new System.Drawing.Point(572, 151);
+            this.btnAudit.Name = "btnAudit";
+            this.btnAudit.Size = new System.Drawing.Size(157, 75);
+            this.btnAudit.TabIndex = 43;
+            this.btnAudit.Text = "Аудит БД";
+            this.btnAudit.UseVisualStyleBackColor = false;
+            this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
             // 
             // MainForm
             // 
@@ -155,9 +169,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(850, 504);
+            this.Controls.Add(this.btnAudit);
+            this.Controls.Add(this.btnInventoryCard);
             this.Controls.Add(this.btnImportExport);
             this.Controls.Add(this.btnOpenAddEmployeeForm);
-            this.Controls.Add(this.btnEncryptedBackup);
             this.Controls.Add(this.btnBackupRestore);
             this.Controls.Add(this.btnSecurity);
             this.Controls.Add(this.panel1);
@@ -179,8 +194,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSecurity;
         private System.Windows.Forms.Button btnBackupRestore;
-        private System.Windows.Forms.Button btnEncryptedBackup;
         private System.Windows.Forms.Button btnOpenAddEmployeeForm;
         private System.Windows.Forms.Button btnImportExport;
+        private System.Windows.Forms.Button btnInventoryCard;
+        private System.Windows.Forms.Button btnAudit;
     }
 }

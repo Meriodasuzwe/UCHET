@@ -103,6 +103,16 @@ namespace AccessControlApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2730387_climb_equipment_inkcontober_snow_tools_icon {
+            get {
+                object obj = ResourceManager.GetObject("2730387_climb_equipment_inkcontober_snow_tools_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _285655_user_icon {
             get {
                 object obj = ResourceManager.GetObject("285655_user_icon", resourceCulture);
@@ -163,9 +173,29 @@ namespace AccessControlApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8665403_file_import_icon {
+            get {
+                object obj = ResourceManager.GetObject("8665403_file_import_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9004760_unlock_padlock_access_security_icon {
             get {
                 object obj = ResourceManager.GetObject("9004760_unlock_padlock_access_security_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9071166_audit_icon {
+            get {
+                object obj = ResourceManager.GetObject("9071166_audit_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

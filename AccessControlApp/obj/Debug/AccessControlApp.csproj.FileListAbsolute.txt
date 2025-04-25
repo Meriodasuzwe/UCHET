@@ -40,7 +40,6 @@ C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessCon
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.AddEmployeeForm.resources
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.BackupRestoreForm.resources
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.EmployeeForm.resources
-C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.EncryptedBackupRestoreForm.resources
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.HRManagerForm.resources
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.ImportExportForm.resources
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.LoginForm.resources
@@ -52,3 +51,5 @@ C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessCon
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessCo.71344BEE.Up2Date
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.exe
 C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.pdb
+C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.EquipmentViewerForm.resources
+C:\Users\User\source\repos\AccessControlApp\AccessControlApp\obj\Debug\AccessControlApp.auditt.resources

@@ -94,6 +94,12 @@
     <Compile Include="AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="auditt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="auditt.Designer.cs">
+      <DependentUpon>auditt.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackupRestoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,11 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EncryptedBackupRestoreForm.cs">
+    <Compile Include="EquipmentViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EncryptedBackupRestoreForm.Designer.cs">
-      <DependentUpon>EncryptedBackupRestoreForm.cs</DependentUpon>
+    <Compile Include="EquipmentViewerForm.Designer.cs">
+      <DependentUpon>EquipmentViewerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HRManagerForm.cs">
       <SubType>Form</SubType>
@@ -148,14 +154,17 @@
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="auditt.resx">
+      <DependentUpon>auditt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BackupRestoreForm.resx">
       <DependentUpon>BackupRestoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EncryptedBackupRestoreForm.resx">
-      <DependentUpon>EncryptedBackupRestoreForm.cs</DependentUpon>
+    <EmbeddedResource Include="EquipmentViewerForm.resx">
+      <DependentUpon>EquipmentViewerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRManagerForm.resx">
       <DependentUpon>HRManagerForm.cs</DependentUpon>
@@ -231,6 +240,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\326659_info_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8665403_file_import_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9071166_audit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2730387_climb_equipment_inkcontober_snow_tools_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

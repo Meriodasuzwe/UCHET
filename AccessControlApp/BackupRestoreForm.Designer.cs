@@ -55,22 +55,32 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxPassEnc = new System.Windows.Forms.TextBox();
-            this.textBoxCert = new System.Windows.Forms.TextBox();
-            this.btnCrKey = new System.Windows.Forms.Button();
+            this.btnResEncDB = new System.Windows.Forms.Button();
+            this.btnEncDB = new System.Windows.Forms.Button();
+            this.textBoxName_encDB = new System.Windows.Forms.TextBox();
+            this.btnNewCert = new System.Windows.Forms.Button();
+            this.textBoxNewCert = new System.Windows.Forms.TextBox();
+            this.btnCrKeyCer = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxKeyCer = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnDelCer = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnDelKey = new System.Windows.Forms.Button();
             this.btnCrCer = new System.Windows.Forms.Button();
-            this.btnDelCer = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxKeyCer = new System.Windows.Forms.TextBox();
-            this.btnCrKeyCer = new System.Windows.Forms.Button();
-            this.textBoxNewCert = new System.Windows.Forms.TextBox();
-            this.btnNewCert = new System.Windows.Forms.Button();
-            this.textBoxName_encDB = new System.Windows.Forms.TextBox();
-            this.btnEncDB = new System.Windows.Forms.Button();
-            this.btnResEncDB = new System.Windows.Forms.Button();
+            this.btnCrKey = new System.Windows.Forms.Button();
+            this.textBoxPassEnc = new System.Windows.Forms.TextBox();
+            this.textBoxCert = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -114,11 +124,12 @@
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(1042, 0);
+            this.label5.Location = new System.Drawing.Point(1053, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 39;
             this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnFullBackup
             // 
@@ -364,6 +375,16 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label88);
+            this.groupBox3.Controls.Add(this.label89);
+            this.groupBox3.Controls.Add(this.label91);
             this.groupBox3.Controls.Add(this.btnResEncDB);
             this.groupBox3.Controls.Add(this.btnEncDB);
             this.groupBox3.Controls.Add(this.textBoxName_encDB);
@@ -387,34 +408,123 @@
             this.groupBox3.Size = new System.Drawing.Size(559, 438);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Мастер-ключ";
+            this.groupBox3.Text = "Шифрование:";
             // 
-            // textBoxPassEnc
+            // btnResEncDB
             // 
-            this.textBoxPassEnc.Location = new System.Drawing.Point(142, 47);
-            this.textBoxPassEnc.Name = "textBoxPassEnc";
-            this.textBoxPassEnc.Size = new System.Drawing.Size(158, 27);
-            this.textBoxPassEnc.TabIndex = 0;
+            this.btnResEncDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnResEncDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResEncDB.ForeColor = System.Drawing.Color.Black;
+            this.btnResEncDB.Location = new System.Drawing.Point(85, 383);
+            this.btnResEncDB.Name = "btnResEncDB";
+            this.btnResEncDB.Size = new System.Drawing.Size(126, 31);
+            this.btnResEncDB.TabIndex = 14;
+            this.btnResEncDB.Text = "Восстановить";
+            this.btnResEncDB.UseVisualStyleBackColor = false;
+            this.btnResEncDB.Click += new System.EventHandler(this.btnResEncDB_Click);
             // 
-            // textBoxCert
+            // btnEncDB
             // 
-            this.textBoxCert.Location = new System.Drawing.Point(142, 103);
-            this.textBoxCert.Name = "textBoxCert";
-            this.textBoxCert.Size = new System.Drawing.Size(158, 27);
-            this.textBoxCert.TabIndex = 1;
+            this.btnEncDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnEncDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncDB.ForeColor = System.Drawing.Color.Black;
+            this.btnEncDB.Location = new System.Drawing.Point(362, 322);
+            this.btnEncDB.Name = "btnEncDB";
+            this.btnEncDB.Size = new System.Drawing.Size(122, 31);
+            this.btnEncDB.TabIndex = 13;
+            this.btnEncDB.Text = "Зашифровать";
+            this.btnEncDB.UseVisualStyleBackColor = false;
+            this.btnEncDB.Click += new System.EventHandler(this.btnEncDB_Click);
             // 
-            // btnCrKey
+            // textBoxName_encDB
             // 
-            this.btnCrKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnCrKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrKey.ForeColor = System.Drawing.Color.Black;
-            this.btnCrKey.Location = new System.Drawing.Point(324, 43);
-            this.btnCrKey.Name = "btnCrKey";
-            this.btnCrKey.Size = new System.Drawing.Size(102, 31);
-            this.btnCrKey.TabIndex = 2;
-            this.btnCrKey.Text = "Создать";
-            this.btnCrKey.UseVisualStyleBackColor = false;
-            this.btnCrKey.Click += new System.EventHandler(this.btnCrKey_Click);
+            this.textBoxName_encDB.Location = new System.Drawing.Point(311, 289);
+            this.textBoxName_encDB.Name = "textBoxName_encDB";
+            this.textBoxName_encDB.Size = new System.Drawing.Size(220, 27);
+            this.textBoxName_encDB.TabIndex = 12;
+            // 
+            // btnNewCert
+            // 
+            this.btnNewCert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnNewCert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewCert.ForeColor = System.Drawing.Color.Black;
+            this.btnNewCert.Location = new System.Drawing.Point(443, 221);
+            this.btnNewCert.Name = "btnNewCert";
+            this.btnNewCert.Size = new System.Drawing.Size(102, 31);
+            this.btnNewCert.TabIndex = 11;
+            this.btnNewCert.Text = "Создать";
+            this.btnNewCert.UseVisualStyleBackColor = false;
+            this.btnNewCert.Click += new System.EventHandler(this.btnNewCert_Click);
+            // 
+            // textBoxNewCert
+            // 
+            this.textBoxNewCert.Location = new System.Drawing.Point(275, 223);
+            this.textBoxNewCert.Name = "textBoxNewCert";
+            this.textBoxNewCert.Size = new System.Drawing.Size(151, 27);
+            this.textBoxNewCert.TabIndex = 10;
+            // 
+            // btnCrKeyCer
+            // 
+            this.btnCrKeyCer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnCrKeyCer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrKeyCer.ForeColor = System.Drawing.Color.Black;
+            this.btnCrKeyCer.Location = new System.Drawing.Point(443, 169);
+            this.btnCrKeyCer.Name = "btnCrKeyCer";
+            this.btnCrKeyCer.Size = new System.Drawing.Size(102, 31);
+            this.btnCrKeyCer.TabIndex = 9;
+            this.btnCrKeyCer.Text = "Создать";
+            this.btnCrKeyCer.UseVisualStyleBackColor = false;
+            this.btnCrKeyCer.Click += new System.EventHandler(this.btnCrKeyCer_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(13, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 20);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Сертификата:";
+            // 
+            // textBoxKeyCer
+            // 
+            this.textBoxKeyCer.Location = new System.Drawing.Point(275, 171);
+            this.textBoxKeyCer.Name = "textBoxKeyCer";
+            this.textBoxKeyCer.Size = new System.Drawing.Size(151, 27);
+            this.textBoxKeyCer.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(13, 174);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(233, 20);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Рез. копирование мастер ключа";
+            // 
+            // btnDelCer
+            // 
+            this.btnDelCer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnDelCer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelCer.ForeColor = System.Drawing.Color.Black;
+            this.btnDelCer.Location = new System.Drawing.Point(443, 104);
+            this.btnDelCer.Name = "btnDelCer";
+            this.btnDelCer.Size = new System.Drawing.Size(102, 31);
+            this.btnDelCer.TabIndex = 4;
+            this.btnDelCer.Text = "Удалить";
+            this.btnDelCer.UseVisualStyleBackColor = false;
+            this.btnDelCer.Click += new System.EventHandler(this.btnDelCer_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(13, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 20);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Введите пароль:";
             // 
             // btnDelKey
             // 
@@ -442,121 +552,138 @@
             this.btnCrCer.UseVisualStyleBackColor = false;
             this.btnCrCer.Click += new System.EventHandler(this.btnCrCer_Click);
             // 
-            // btnDelCer
+            // btnCrKey
             // 
-            this.btnDelCer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnDelCer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelCer.ForeColor = System.Drawing.Color.Black;
-            this.btnDelCer.Location = new System.Drawing.Point(443, 104);
-            this.btnDelCer.Name = "btnDelCer";
-            this.btnDelCer.Size = new System.Drawing.Size(102, 31);
-            this.btnDelCer.TabIndex = 4;
-            this.btnDelCer.Text = "Удалить";
-            this.btnDelCer.UseVisualStyleBackColor = false;
-            this.btnDelCer.Click += new System.EventHandler(this.btnDelCer_Click);
+            this.btnCrKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.btnCrKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrKey.ForeColor = System.Drawing.Color.Black;
+            this.btnCrKey.Location = new System.Drawing.Point(324, 43);
+            this.btnCrKey.Name = "btnCrKey";
+            this.btnCrKey.Size = new System.Drawing.Size(102, 31);
+            this.btnCrKey.TabIndex = 2;
+            this.btnCrKey.Text = "Создать";
+            this.btnCrKey.UseVisualStyleBackColor = false;
+            this.btnCrKey.Click += new System.EventHandler(this.btnCrKey_Click);
             // 
-            // label10
+            // textBoxPassEnc
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(13, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 20);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Сертификата:";
+            this.textBoxPassEnc.Location = new System.Drawing.Point(142, 47);
+            this.textBoxPassEnc.Name = "textBoxPassEnc";
+            this.textBoxPassEnc.Size = new System.Drawing.Size(158, 27);
+            this.textBoxPassEnc.TabIndex = 0;
             // 
-            // label11
+            // textBoxCert
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(13, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 20);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Введите пароль:";
+            this.textBoxCert.Location = new System.Drawing.Point(142, 103);
+            this.textBoxCert.Name = "textBoxCert";
+            this.textBoxCert.Size = new System.Drawing.Size(158, 27);
+            this.textBoxCert.TabIndex = 1;
             // 
-            // label12
+            // label91
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(13, 174);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(256, 20);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Введите пароль приватного ключа:";
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.label91.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.label91.Location = new System.Drawing.Point(13, 346);
+            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(269, 20);
+            this.label91.TabIndex = 522;
+            this.label91.Text = "Восстановление зашифрованной БД:";
             // 
-            // textBoxKeyCer
+            // label88
             // 
-            this.textBoxKeyCer.Location = new System.Drawing.Point(275, 171);
-            this.textBoxKeyCer.Name = "textBoxKeyCer";
-            this.textBoxKeyCer.Size = new System.Drawing.Size(151, 27);
-            this.textBoxKeyCer.TabIndex = 8;
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.label88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.label88.Location = new System.Drawing.Point(13, 279);
+            this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(277, 20);
+            this.label88.TabIndex = 524;
+            this.label88.Text = "Рез. копирование БД с шифрованием ";
             // 
-            // btnCrKeyCer
+            // label89
             // 
-            this.btnCrKeyCer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnCrKeyCer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrKeyCer.ForeColor = System.Drawing.Color.Black;
-            this.btnCrKeyCer.Location = new System.Drawing.Point(443, 169);
-            this.btnCrKeyCer.Name = "btnCrKeyCer";
-            this.btnCrKeyCer.Size = new System.Drawing.Size(102, 31);
-            this.btnCrKeyCer.TabIndex = 9;
-            this.btnCrKeyCer.Text = "Создать";
-            this.btnCrKeyCer.UseVisualStyleBackColor = false;
-            this.btnCrKeyCer.Click += new System.EventHandler(this.btnCrKeyCer_Click);
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.label89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.label89.Location = new System.Drawing.Point(3, 296);
+            this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(285, 20);
+            this.label89.TabIndex = 523;
+            this.label89.Text = "           алгоритма шифрования АЕS_256:";
             // 
-            // textBoxNewCert
+            // label13
             // 
-            this.textBoxNewCert.Location = new System.Drawing.Point(275, 219);
-            this.textBoxNewCert.Name = "textBoxNewCert";
-            this.textBoxNewCert.Size = new System.Drawing.Size(151, 27);
-            this.textBoxNewCert.TabIndex = 10;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(310, 271);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 15);
+            this.label13.TabIndex = 525;
+            this.label13.Text = "Введите имя файла:";
             // 
-            // btnNewCert
+            // label14
             // 
-            this.btnNewCert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnNewCert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewCert.ForeColor = System.Drawing.Color.Black;
-            this.btnNewCert.Location = new System.Drawing.Point(443, 221);
-            this.btnNewCert.Name = "btnNewCert";
-            this.btnNewCert.Size = new System.Drawing.Size(102, 31);
-            this.btnNewCert.TabIndex = 11;
-            this.btnNewCert.Text = "button1";
-            this.btnNewCert.UseVisualStyleBackColor = false;
-            this.btnNewCert.Click += new System.EventHandler(this.btnNewCert_Click);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(13, 226);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(216, 20);
+            this.label14.TabIndex = 526;
+            this.label14.Text = "Восстанавление сертификата:";
             // 
-            // textBoxName_encDB
+            // label15
             // 
-            this.textBoxName_encDB.Location = new System.Drawing.Point(169, 289);
-            this.textBoxName_encDB.Name = "textBoxName_encDB";
-            this.textBoxName_encDB.Size = new System.Drawing.Size(100, 27);
-            this.textBoxName_encDB.TabIndex = 12;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(272, 205);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(151, 15);
+            this.label15.TabIndex = 527;
+            this.label15.Text = "Введите имя сертификата:";
             // 
-            // btnEncDB
+            // label16
             // 
-            this.btnEncDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnEncDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncDB.ForeColor = System.Drawing.Color.Black;
-            this.btnEncDB.Location = new System.Drawing.Point(304, 288);
-            this.btnEncDB.Name = "btnEncDB";
-            this.btnEncDB.Size = new System.Drawing.Size(122, 31);
-            this.btnEncDB.TabIndex = 13;
-            this.btnEncDB.Text = "Зашифровать";
-            this.btnEncDB.UseVisualStyleBackColor = false;
-            this.btnEncDB.Click += new System.EventHandler(this.btnEncDB_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(272, 153);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(168, 15);
+            this.label16.TabIndex = 528;
+            this.label16.Text = "Введите пароль прив. ключа:";
             // 
-            // btnResEncDB
+            // label17
             // 
-            this.btnResEncDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.btnResEncDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResEncDB.ForeColor = System.Drawing.Color.Black;
-            this.btnResEncDB.Location = new System.Drawing.Point(443, 287);
-            this.btnResEncDB.Name = "btnResEncDB";
-            this.btnResEncDB.Size = new System.Drawing.Size(102, 31);
-            this.btnResEncDB.TabIndex = 14;
-            this.btnResEncDB.Text = "Восстановить";
-            this.btnResEncDB.UseVisualStyleBackColor = false;
-            this.btnResEncDB.Click += new System.EventHandler(this.btnResEncDB_Click);
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(13, 190);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 20);
+            this.label17.TabIndex = 529;
+            this.label17.Text = "и сертификата";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(139, 85);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(151, 15);
+            this.label18.TabIndex = 530;
+            this.label18.Text = "Введите имя сертификата:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(139, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(177, 15);
+            this.label19.TabIndex = 531;
+            this.label19.Text = "Введите пароль мастер ключа:";
             // 
             // BackupRestoreForm
             // 
@@ -629,5 +756,15 @@
         private System.Windows.Forms.Button btnEncDB;
         private System.Windows.Forms.TextBox textBoxName_encDB;
         private System.Windows.Forms.Button btnResEncDB;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }

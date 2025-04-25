@@ -288,6 +288,11 @@ namespace AccessControlApp
                 MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
